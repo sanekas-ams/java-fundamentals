@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>edu.harbour.space.university</groupId>
     <artifactId>java-fundamentals</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -14,6 +14,7 @@
         <log4j.version>1.2.17</log4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -32,7 +33,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>edu.harbour.space.university.calculatorFacade.Main</mainClass>
+                            <mainClass>edu.harbour.space.university.logging.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
