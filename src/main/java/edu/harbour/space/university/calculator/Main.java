@@ -9,6 +9,6 @@ public class Main {
         InputReader inputReader = new CommandLineReader(new Scanner(System.in));
         InputParser parser = new InputParser();
         Calculator calculator = new Calculator(inputReader, parser);
-        System.out.println(calculator.compute(new Sum()));
+        System.out.println(calculator.compute());
     }
 }

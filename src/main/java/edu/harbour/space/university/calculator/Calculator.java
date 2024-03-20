@@ -1,6 +1,7 @@
 package edu.harbour.space.university.calculator;
 
 import edu.harbour.space.university.calculator.computation.Computation;
+import edu.harbour.space.university.calculator.computation.ComputationFactory;
 
 public class Calculator {
     private final InputReader inputReader;
@@ -11,8 +12,10 @@ public class Calculator {
         this.inputParser = inputParser;
     }
 
-    public double compute(Computation computation) {
+    public double compute() {
         Expression expression = inputParser.parseInput(inputReader.readInput());
+        ComputationFactory computationFactory=new ComputationFactory();
+        Computation computation= computationFactory.resolveComputation(expression.getOperator());
         return computation.apply(expression.getNumber1(), expression.getNumber2());
     }
 }

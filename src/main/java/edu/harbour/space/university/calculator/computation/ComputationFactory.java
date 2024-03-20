@@ -4,7 +4,16 @@ import edu.harbour.space.university.calculator.Operator;
 
 public class ComputationFactory {
 
+
     public Computation resolveComputation(Operator operator) {
-        return null;
+         if (operator.getSymbol()=='+'){
+             return  new Sum();
+         }else if (operator.getSymbol()=='/'){
+             return new Division();
+         }else if(operator.getSymbol()=='-'){
+             return new Subtraction();
+         }else {
+             return new Multiplication();
+         }
     }
 }
