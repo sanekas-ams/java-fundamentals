@@ -22,6 +22,6 @@ public class CommandLineReaderTest {
         String result = commandLineReader.readInput();
 
         // then
-        assertEquals(s, result);
+        assertEquals("def", result);
     }
 }

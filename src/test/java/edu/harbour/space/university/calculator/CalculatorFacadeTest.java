@@ -1,6 +1,7 @@
 package edu.harbour.space.university.calculator;
 
 import edu.harbour.space.university.calculator.computation.ComputationFactory;
+import edu.harbour.space.university.calculator.computation.Division;
 import edu.harbour.space.university.calculator.computation.Sum;
 import org.junit.jupiter.api.Test;
 
@@ -26,5 +27,27 @@ public class CalculatorFacadeTest {
 
         // then
         assertEquals(4, result);
+
+        given(reader.readInput()).willReturn("5/5");
+        given(computationFactory.resolveComputation(any())).willReturn(new Division());
+
+        // when
+        result = calculator.run();
+
+        // then
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void testCalculatorDivision() {
+        // given
+        given(reader.readInput()).willReturn("5/5");
+        given(computationFactory.resolveComputation(any())).willReturn(new Division());
+
+        // when
+        double result = calculator.run();
+
+        // then
+        assertEquals(1, result);
     }
 }
